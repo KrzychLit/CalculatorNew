@@ -71,16 +71,17 @@ switch(operator){
         break;
 }
 
+AddToHistory();
 RemoveHistoryBtn.classList.add('active');
 numbernow.innerHTML=result;
 firstnumber.innerHTML='';
 signmath.innerHTML='';
-AddToHistory();
+
 }
 
 function AddToHistory() {
     const newelementHistory = document.createElement('li');
-    newelementHistory = `${firstnumber.innerHTML} ${signmath.innerHTML} ${numbernow.innerHTML} = ${result}`;
+    newelementHistory.innerHTML = `${firstnumber.innerHTML} ${signmath.innerHTML} ${numbernow.innerHTML} = ${result}`;
     newelementHistory.classList.add('history-things');
     CalculateHistory.appendChild(newelementHistory);
 } 
@@ -92,7 +93,7 @@ function ClearScreen() {
     }
 
 function ClearHistory() {
-    
+    CalculateHistory.innerHTML='';
     }
 
 
