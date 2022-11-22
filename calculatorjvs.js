@@ -28,7 +28,7 @@ return;
 else if(numbernow.innerHTML===''){
 return;
 }
-if(signmath.innerHTML!==''){
+if(signmath.innerHTML !==''){
     showResult();
 }
 firstnumber.innerHTML=numbernow.innerHTML;
@@ -49,8 +49,8 @@ numbernow.innerHTML += this.textContent;
 function showResult() {
 if(firstnumber.innerHTML==='' ||numbernow.innerHTML==='')return;
 
-let a = Number(firstnumber.innerHTML);
-let b = Number(numbernow.innerHTML);
+let a = Number(numbernow.innerHTML);
+let b = Number(firstnumber.innerHTML);
 let operator = signmath.innerHTML;
 
 switch(operator){
@@ -93,7 +93,10 @@ function ClearScreen() {
     }
 
 function ClearHistory() {
-    CalculateHistory.innerHTML='';
+    CalculateHistory.textContent='';
+    if(CalculateHistory.textContent===''){
+        RemoveHistoryBtn.classList.remove('active');
+    }
     }
 
 
